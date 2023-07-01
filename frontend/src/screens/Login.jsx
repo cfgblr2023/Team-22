@@ -27,7 +27,7 @@ const Login = () => {
     console.log(json);
 
     if (json.success) {
-      alert("Succesfull");
+      // alert("Succesfull");
       if(email==="admin@gmail.com")
       {
           localStorage.setItem('admin',"true");
@@ -36,7 +36,7 @@ const Login = () => {
       localStorage.setItem('userEmail', email)
       localStorage.setItem('token', json.authToken)
       console.log(email);
-      navigate("/");
+      navigate("/volunteer/home");
 
     }
     else {

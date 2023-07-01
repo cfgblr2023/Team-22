@@ -1,0 +1,111 @@
+body{
+    background: linear-gradient(45deg, #121b5b, #245719);
+    height: 100vh;
+}
+.container {
+    width: 80%;
+    top:10%;
+    margin-left: auto;
+    margin-top: 60px;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.box {
+    background-color: rgb(255, 255, 255);
+    width: 67%;
+    height: 200px;
+    border-radius: 20px;
+    transition: all .3s;
+    box-shadow: 4px 4px 20px rgba(1, 1, 1, .2);
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 40px;
+}
+.box:hover{
+    transform: translateY(-10px);
+}
+.prof{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png');
+    background-size: cover;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+.Username {
+    font-family: "Ostrich Sans Rounded Medium";
+    font-size: 1.5rem;
+    position: relative;
+    left: 11%;
+    letter-spacing: 1px;
+    color: #686868;
+    top: 71%;
+}
+.bookmark {
+    position: absolute;
+    top: 7%;
+    left: -24%;
+}
+.img {
+        background: url(https://cdn-icons-png.flaticon.com/512/9327/9327582.png);
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left: 5%;
+        top: -27%
+}
+
+.name{
+    font-family: "Ostrich Sans Rounded Medium";
+    font-size: 1.5rem;
+    position: absolute;
+    left: 180px;
+    font-weight: bold;
+    top: 20px;
+    letter-spacing: 2px;
+    color: #686868;
+}
+.box p{
+    font-family: "Ostrich Sans Rounded Medium";
+    font-size: 1rem;
+    position: absolute;
+    left: 180px;
+    font-weight: bold;
+    top: 50px;
+    letter-spacing: 2px;
+    color: #686868;
+    padding-top: 1%;
+    padding-right: 2%;
+}
+.like {
+    border-radius: 8px;
+    height: 25%;
+    width: 30%;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: -20%;
+    background-color: rgba(193, 193, 211, 0.658);
+    border-width: 1px;
+    border-color: black;
+}
+.ocns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    /* position: relative; */
+    /* flex-direction: column; */
+    /* top: 2%; */
+    /* bottom: 3%; */
+    /* flex-direction: row; */
+    width: 40%;
+    height: 100%;
+    position: relative;
+    top: 0%;
+    /* bottom: -20%; */
+}
