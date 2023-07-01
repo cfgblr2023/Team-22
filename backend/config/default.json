@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://admin:admin@cluster0.jgv4p.mongodb.net/Social_Media?retryWrites=true&w=majority",
+    "jsonWebTokenSecret": "helloWorld"
+}
