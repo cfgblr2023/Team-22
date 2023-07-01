@@ -1,0 +1,67 @@
+.course-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 4%;
+    background: whitesmoke;
+}
+  
+  .course-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .professor {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .available {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .progress-bar {
+    background-color: #eee;
+    height: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .progress {
+    height: 100%;
+    border-radius: 6px;
+    background-color: #3c90e0;
+  }
+  
+  .enroll-button {
+    background-color: #3c90e0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .enroll-button:hover {
+    background-color: #326ba8;
+  }
+  .enroll-button.enrolled {
+    background-color: green;
+    /* Additional styles for the enrolled button */
+  }
+  .gogo{
+    background-color: #833ce0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  

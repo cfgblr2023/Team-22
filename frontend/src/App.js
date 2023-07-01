@@ -6,10 +6,16 @@ import Volunteer from './screens/Volunteer';
 import Addcourse from './screens/Addcourse';
 import Main from './screens/Main';
 import Addprofile from './screens/Addprofile';
+import CourseListingPage from './screens/CourseListingPage';
+import Enrolled from './screens/Enrolled';
+import ShopContextProvider from './context';
+import CourseInside from './screens/CourseInside';
+import CourseMake from './screens/CourseMake';
 
 function App() {
   return (
     <div className="App">
+      <ShopContextProvider>
     <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login/>}></Route>
@@ -19,8 +25,14 @@ function App() {
             {/* <Route path="/volunteer" element={<Login></Login>}></Route> */}
             <Route path="/volunteer/addcourse" element={<Addcourse></Addcourse>}></Route>
             <Route path="/volunteer/editprofile" element={<Addprofile></Addprofile>}></Route>
+            <Route path='/student/mycourses' element={<CourseListingPage></CourseListingPage>}></Route>
+            <Route path='/student/mycourses/courseone' element={<CourseInside></CourseInside>}></Route>
+            <Route path='/student/enrolled' element={<Enrolled></Enrolled>}></Route>
+            <Route path='/student/enrolled' element={<Enrolled></Enrolled>}></Route>
+            <Route path='/volunteer/home/courseone' element={<CourseMake></CourseMake>}></Route>
           </Routes>
     </BrowserRouter>
+    </ShopContextProvider>
     </div>
   );
 }
