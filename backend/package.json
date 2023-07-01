@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:2": "PORT=3001 node server.js",
+    "start:3": "PORT=3002 node server.js"
   },
   "author": "",
   "license": "ISC",
