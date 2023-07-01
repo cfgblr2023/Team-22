@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.css'
 
+
+
+
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,21 +13,69 @@ const Register = () => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
 
-  const handleRegister = (e) => {
+
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log("hello")
+  const response = await fetch("http://localhost:5000/api/register", {
+    // credentials: 'include',
+    // Origin:"http://localhost:3000/login",
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: email, password: confirmPassword, name: name, age:age,role:address })
+  });
+  const json = await response.json()
+  console.log(json);
+  if (json.success) {
+    if(email==="admin@gmail.com")
+    {
+        localStorage.setItem('admin',"true");
+    }
+    //save the auth toke to local storage and redirect
+    localStorage.setItem('userEmail', email)
+    localStorage.setItem('token', json.authToken)
+    console.log(email);
+    
+  }
+  else {
+    alert("Enter Valid Credentials")
+  }
+}
+
+
+  const handleRegister = async(e) => {
     e.preventDefault();
+   
     if(email.trim().length==0 || password.trim().length==0 || address.trim().length==0 || name.trim().length==0 || age.trim().length==0)
     {
         alert('Please fill all the fields');
     }
+
+    const response = await  fetch("http://localhost:5000/api/register", 
+    {
+    // credentials: 'include',
+    // Origin:"http://localhost:3000/login",
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: email, password: confirmPassword, name: name, age:age,role:address })
+  });
+
+  const json = await response.json()
+  console.log(json);
+  if (json.success) {
+  }
+  else {
+    alert("Enter Valid Credentials")
+  }
+
     // Registration logic likh do idhar
     // once registration successfull write the redux part here.
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
-    console.log('Address:', address);
-    console.log('Name:', name);
-    console.log('Age:', age);
-  };
+   };
 
   return (
     <div className="flex gap-10 justify-center items-center h-screen bg-gradient-to-br from-teal-400 to-purple-500">
@@ -39,7 +90,7 @@ their home business.
 </div>
       <div className="w-3/4 md:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-lg p-8">
         <h2 className="text-4xl font-bold mb-6 text-center text-purple-800">Create an Account</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
               Email
