@@ -2,11 +2,15 @@ const mongoose= require('mongoose')
 
 const {Schema}=mongoose;
 const AddCourse= new Schema({
-    interest:{
+    email:{
+        type:String,
+        required:true    
+    },
+    area:{
         type: String,
         required: true
     },
-    coursename:{
+    course:{
         type:String,
         required:true
     },
@@ -18,15 +22,18 @@ const AddCourse= new Schema({
         type:Number,
         required: true
     },
-    lnaguage:{
+    language:{
         type:String,
         required:true
     },
     offline:{
         type: Boolean,
         required:true
+    },
+    verified:{
+        type:Boolean,
+        default:false
     }
-
     
 })
 

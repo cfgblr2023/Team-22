@@ -5,12 +5,19 @@ import { useNavigate } from 'react-router-dom';
 //one of the hook of firebase to make our job easy with firebase
 function Navbar() {
   const nav= useNavigate();
+  if(localStorage.getItem("token")==="")
+  {
+    nav("/");
+  }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const logout = async ()=>{
     nav("/");
+    localStorage.removeItem("userEmail");
+    localStorage.setItem('token',"");
+      
   }
   //to include javascript in return part we always use {}
   return (

@@ -21,7 +21,20 @@ const UserSchema= new Schema({
     role:{
         type:String,
         required:true
+    },
+    description:{
+        type:String,
+        default:""
+    },
+    skills:{
+        type:String,
+        default:""
+    },
+    education:{
+        type:String,
+        default:""
     }
+    
 
     
 })

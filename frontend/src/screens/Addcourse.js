@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Addcourse.css'
+import { useNavigate, Link } from 'react-router-dom';
 import Navbar from './Navbar';
 const AddCourse = () => {
+  let navigate=useNavigate();
   const [areaOfInterest, setAreaOfInterest] = useState('');
   const [courseName, setCourseName] = useState('');
   const [schedule, setSchedule] = useState('');
@@ -9,7 +11,7 @@ const AddCourse = () => {
   const [language, setLanguage] = useState('English');
   const [offline, setOffline] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     // Handle form submission logic here
     console.log({
@@ -20,6 +22,26 @@ const AddCourse = () => {
       language,
       offline,
     });
+
+    const response = await  fetch("http://localhost:5000/api/addcourse/addcourse", 
+    {
+    // credentials: 'include',
+    // Origin:"http://localhost:3000/login",
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email:localStorage.getItem("userEmail"),course: courseName, skill: skillLevel, live:schedule,offline:offline, language:language,area:areaOfInterest })
+  });
+
+  const json = await response.json()
+  if (json.success) {
+    navigate('/volunteer/home');
+  }
+  else {
+    alert("Enter Valid Credentials")
+  }
+
   };
 
   return (
@@ -36,6 +58,8 @@ const AddCourse = () => {
         onChange={(e) => setAreaOfInterest(e.target.value)}
         className="form-select"
       >
+        
+        <option value="">Select</option>
         <option value="Programming">Programming</option>
         <option value="Political Science">Political Science</option>
         <option value="History">History</option>

@@ -1,14 +1,39 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { useNavigate, Link } from 'react-router-dom';
 import './Addprofile.css';
 
 const AddProfile = () => {
-  const handleSubmit = (event) => {
+  let navigate = useNavigate()
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    // Handle form submission logic here
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
+   
+    const response = await  fetch("http://localhost:5000/api/update/update", 
+    {
+    // credentials: 'include',
+    // Origin:"http://localhost:3000/login",
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: localStorage.getItem("userEmail"), name: data.name, education:data.education, description:data.description, skills:data.skills})
+  });
+
+  const json = await response.json()
+  if (json.success) 
+  {navigate('/volunteer/home')
+  }
+  else {
+    alert("Enter Valid Credentials")
+  }
+
+
+    // Handle form submission logic here
     console.log(data);
+
   };
 
   return (
@@ -24,16 +49,6 @@ const AddProfile = () => {
             type="text"
             id="name"
             name="name"
-            required
-            className="form-input"
-          />
-          <label htmlFor="email" className="form-label">
-            Email:
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
             required
             className="form-input"
           />

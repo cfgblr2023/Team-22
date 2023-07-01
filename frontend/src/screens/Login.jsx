@@ -35,9 +35,13 @@ const Login = () => {
       //save the auth toke to local storage and redirect
       localStorage.setItem('userEmail', email)
       localStorage.setItem('token', json.authToken)
-      console.log(email);
-      navigate("/volunteer/home");
+      if(json.userRole=='Student')
+      {
 
+      }
+      else{
+        navigate('/volunteer/home')
+      }
     }
     else {
       alert("Enter Valid Credentials")

@@ -15,7 +15,7 @@ router.post('/login', [
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() })
     }
-
+    
     const { email, password } = req.body;
     try {
         let user = await User.findOne({ email });  //{email:email} === {email}
@@ -33,8 +33,9 @@ router.post('/login', [
             }
         }
         success = true;
+        const userRole=user.role
         const authToken = jwt.sign(data, jwtSecret);
-        res.json({ success, authToken })
+        res.json({ success, authToken, userRole })
 
 
     } catch (error) {
