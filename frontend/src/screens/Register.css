@@ -1,0 +1,10 @@
+.text-400 {
+    font-size: 16px;
+    width: 40%;
+    color: rgba(255, 255, 255, 0.904);
+    font-family: cursive;
+    font-style: oblique;
+    font-weight: bolder;
+    margin-right: 10%;
+    text-align: justify;
+}
