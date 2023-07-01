@@ -1,10 +1,14 @@
 import React from 'react'
 import './Course.css'
 import Navbar from './Navbar'
+import { useNavigate } from 'react-router-dom'
+
 function Course(props) {
-
+  const nav = useNavigate();
     //const { post } = props;
-
+  const handlesub = () =>{
+    nav("/volunteer/home/courseone");
+  }
   return (
     <>
         <div className="box">
@@ -12,7 +16,7 @@ function Course(props) {
             <h1 className="Username">Availability : {props.live}</h1>
             <div className='ocns'>
             <div className="img"></div>
-            <button class="like">Go to Course</button>
+            <button onClick={handlesub} class="like">Go to Course</button>
             <p>
                 ({props.language})
             </p>
