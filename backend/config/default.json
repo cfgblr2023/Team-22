@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://admin:admin@lampfoundation.e9j9z2j.mongodb.net/?retryWrites=true&w=majority",
+  "jsonWebTokenSecret": "helloWorld"
+}
