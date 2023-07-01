@@ -1,23 +1,47 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { setUserLoginDetails } from '../features/user/userSlice';
 
 const Login = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const handleLogin = (e) => {
+  let navigate = useNavigate()
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Login Authentication
-    //dispatch once loggen in
-    dispatch(setUserLoginDetails({
-        id:'123', //login mongodb docId
-        name:'Raam',
-        email:'akshayrai@bhau.com',
-    }))// SImilarly do this with register page
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    const response = await fetch("http://localhost:5000/api/login/login", {
+      // credentials: 'include',
+      // Origin:"http://localhost:3000/login",
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email:email, password: password })
+
+    });
+    const json = await response.json()
+    console.log(json);
+
+    if (json.success) {
+      alert("Succesfull");
+      if(email==="admin@gmail.com")
+      {
+          localStorage.setItem('admin',"true");
+      }
+      //save the auth toke to local storage and redirect
+      localStorage.setItem('userEmail', email)
+      localStorage.setItem('token', json.authToken)
+      console.log(email);
+      navigate("/");
+
+    }
+    else {
+      alert("Enter Valid Credentials")
+    }
   };
 
   return (

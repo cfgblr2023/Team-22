@@ -1,5 +1,4 @@
 const connectToDatabase = require("./config/connectToDatabase");
-const cors = require("cors");
 
 //Function that connects express app to database
 connectToDatabase(); 
@@ -20,7 +19,8 @@ connectToDatabase();
     res.send('Hello World!')
   })
   
-  app.use('/api/auth', require('./Routes/Auth'));
+  app.use('/api/register', require('./Routes/signup'));
+  app.use('/api/login', require('./Routes/login'));
   
   app.listen(port, () => {
     console.log(`Example app listening on http://localhost:${port}`)

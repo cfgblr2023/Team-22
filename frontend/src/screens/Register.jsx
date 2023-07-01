@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {useNavigate, Link } from 'react-router-dom';
 import './Register.css'
 
 
@@ -13,37 +13,7 @@ const Register = () => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
 
-
-  
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  console.log("hello")
-  const response = await fetch("http://localhost:5000/api/register", {
-    // credentials: 'include',
-    // Origin:"http://localhost:3000/login",
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ email: email, password: confirmPassword, name: name, age:age,role:address })
-  });
-  const json = await response.json()
-  console.log(json);
-  if (json.success) {
-    if(email==="admin@gmail.com")
-    {
-        localStorage.setItem('admin',"true");
-    }
-    //save the auth toke to local storage and redirect
-    localStorage.setItem('userEmail', email)
-    localStorage.setItem('token', json.authToken)
-    console.log(email);
-    
-  }
-  else {
-    alert("Enter Valid Credentials")
-  }
-}
+  let navigate = useNavigate()
 
 
   const handleRegister = async(e) => {
@@ -54,7 +24,7 @@ const handleSubmit = async (e) => {
         alert('Please fill all the fields');
     }
 
-    const response = await  fetch("http://localhost:5000/api/register", 
+    const response = await  fetch("http://localhost:5000/api/register/register", 
     {
     // credentials: 'include',
     // Origin:"http://localhost:3000/login",
@@ -68,6 +38,7 @@ const handleSubmit = async (e) => {
   const json = await response.json()
   console.log(json);
   if (json.success) {
+    navigate("/");
   }
   else {
     alert("Enter Valid Credentials")
@@ -90,7 +61,7 @@ their home business.
 </div>
       <div className="w-3/4 md:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-lg p-8">
         <h2 className="text-4xl font-bold mb-6 text-center text-purple-800">Create an Account</h2>
-        <form onSubmit={handleSubmit}>
+        <form >
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
               Email
