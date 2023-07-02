@@ -1,0 +1,416 @@
+body{
+    background-color: white;
+}
+.container {
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .eve {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 30px;
+  }
+  
+  header.h1 {
+    text-align: center;
+  }
+  
+  .mission-vision {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border-color: #333;
+    border-radius: 5px;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+    margin-top: 5px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 2px 4px rgba(221, 127, 51, 0.703);
+  }
+  
+  .card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .card-content {
+    flex: 1;
+  }
+  
+  .card-content h2 {
+    margin-top: 0;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    block-size: 115%;
+  }
+  
+  .buttons button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .testimonial {
+    margin-top: 70px;
+    text-align: center;
+  }
+  
+  .testimonial-card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-card p {
+    margin-bottom: 10px;
+  }
+  
+  .author {
+    font-style: italic;
+  }
+  
+  .accomplishments {
+    text-align: center;
+    margin-top: 50px;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .accomplishments p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .button-accomplishments {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button-accomplishments button {
+    padding: 20px 20px;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 9px;
+
+  }
+  
+  .button-accomplishments button:hover {
+    background-color: #45a049;
+  }
+  
+  .events {
+    background-color: gray;
+    padding: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-image: url('');
+  }
+  /* header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  nav h1 {
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+  } */
+  
+  /* nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+  } */
+  .main{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+.main-top{
+    display: flex;
+    width: 100%;
+}
+.main-top i{
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: rgb(11, 109, 109);
+    cursor: pointer;
+}
+.main-skills{
+    display: flex;
+    margin-top: 20px;
+}
+.main-skills .card{
+    width: 25%;
+    margin: 10px;
+    background: #FEF8DD;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0,0.1);
+    text-decoration: none;
+}
+.main-skills .card:hover{
+    box-shadow: 0 20px 35px rgba(228, 111, 65, 0.664);
+}
+.main-skills .card h3{
+    margin: 10px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.main-skills .card p{
+    font-size: 12px;
+    text-decoration: none;
+}
+.main-skills .card button{
+    background: orangered;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+}
+.main-skills .card button:hover{
+    background: rgba(223, 70, 15, 0.856);
+}
+.main-skills .card i{
+    font-size: 22px;
+    padding: 10px;
+}
+
+.main-course{
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+.footer-distributed{
+    background: #000000;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+    width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+}
+
+.footer-distributed h3 span{
+    color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+  font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+    color:  #222;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+    width: 35%;
+}
+
+.footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+  font-weight:400;
+    vertical-align: middle;
+    margin:0;
+}
+
+.footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+    color:  lightseagreen;
+    text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}

@@ -4,6 +4,27 @@ import { selectType } from '../features/user/userSlice';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const CourseMake = () => {
+
+  const [courses, setCourses]=useState([])
+
+  useEffect(() => {
+    const loadCourses = async () => {
+      let response = await fetch("http://localhost:5000/api/encourse/encourse", {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      response = await response.json()
+      // console.log(response[1][0].CategoryName)
+      setCourses(response[0])
+    }
+    loadCourses()
+  }, [])
+
+
   const usertype = useSelector(selectType);
   useEffect(() => {
     // Extract the details of the course and if the user id matches the registered list in a particular course, then show the details true or false
@@ -83,7 +104,7 @@ const CourseMake = () => {
         {/* Course Materials */}
         {showDetails && (
           <div className="mb-6">
-            <h3 className="text-xl font-bold mb-4 text-white">Total Students Enrolled : 71</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Total Students Enrolled : {courses.length}</h3>
             <h3 className="text-xl font-bold mb-4 text-white">Add Materials +</h3>
             <div className="flex overflow-x-auto">
               {materials.map((material) => (
