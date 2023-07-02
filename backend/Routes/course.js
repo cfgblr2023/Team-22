@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.post('/course', async (req, res) => {
     try {
-        let course = await addcourse.find({});  //{email:email} === {email}
+        let course = await addcourse.find({});  //{email:email} === {email} 
         global.Courses=course;
         success = true; 
         res.send([global.Courses])

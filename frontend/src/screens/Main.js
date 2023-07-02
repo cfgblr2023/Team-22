@@ -36,7 +36,7 @@ function Main() {
                     (items) => (items.email === localStorage.getItem("userEmail")))
                     .map(filterItems => {
                       return (
-                          <Course area={filterItems.area} coursename={filterItems.course} language={filterItems.language} live={filterItems.live} skill={filterItems.skill} offline={filterItems.offline} ></Course>
+                          <Course area={filterItems.area} coursename={filterItems.course} language={filterItems.language} live={filterItems.live} skill={filterItems.skill} offline={filterItems.offline} name={filterItems.name}></Course>
                         )
                     }) : <div> No Such Data </div>}
 

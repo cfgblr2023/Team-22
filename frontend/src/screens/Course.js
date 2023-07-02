@@ -7,6 +7,8 @@ function Course(props) {
   const nav = useNavigate();
     //const { post } = props;
   const handlesub = () =>{
+    localStorage.setItem("teacher",props.name)
+    localStorage.setItem("course",props.coursename)
     nav("/volunteer/home/courseone");
   }
   return (
