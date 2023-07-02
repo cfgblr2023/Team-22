@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-reduc
+  C:\Program Files\nodejs\node.exe C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @material-ui
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\DELL\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\DELL\AppData\Local\Programs\Python\Python310\;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;C:\Users\DELL\AppData\Roaming\npm;C:\Program Files\nodejs;C:\MinGW\bin;C:\Users\DELL\AppData\Local\Programs\Microsoft VS Code\bin
@@ -14,8 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.npmjs.org/react-reduc: Not found
-      at Request.params.callback [as _callback] (C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+  Error: https://registry.npmjs.org/@material-ui: Request "https://registry.npmjs.org/@material-ui" returned a 405
+      at Request.params.callback [as _callback] (C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66154:18)
       at Request.self.callback (C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
       at Request.emit (node:events:527:28)
       at Request.<anonymous> (C:\Users\DELL\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
@@ -7719,7 +7719,7 @@ Lockfile:
   
   react-redux@^8.1.1:
     version "8.1.1"
-    resolved "https://registry.npmjs.org/react-redux/-/react-redux-8.1.1.tgz"
+    resolved "https://registry.npmjs.org/react-redux/-/react-redux-8.1.1.tgz#8e740f3fd864a4cd0de5ba9cdc8ad39cc9e7c81a"
     integrity sha512-5W0QaKtEhj+3bC0Nj0NkqkhIv8gLADH/2kYFMTHxCVqQILiWzLv6MaLuV5wJU3BQEdHKzTfcvPN0WMS6SC1oyA==
     dependencies:
       "@babel/runtime" "^7.12.1"

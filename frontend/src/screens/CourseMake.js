@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectType } from '../features/user/userSlice';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const CourseMake = () => {
   const usertype = useSelector(selectType);
   useEffect(() => {
@@ -27,6 +28,10 @@ const CourseMake = () => {
     // Check if the student has already registered or not. If not, then register that student and show the details.
   };
 
+  const handleChat = ()=>{
+    window.location.href = 'https://chit-chat-delta-one.vercel.app/';
+  }
+
   const handleViewMaterials = () => {
     // Redirect to '/course/:id/materials' page
   };
@@ -34,9 +39,8 @@ const CourseMake = () => {
   const handleViewAssignments = () => {
     // Redirect to '/course/:id/assignments' page
   };
-
-  const handleJoinLiveClass = (liveClassId) => {
-    // Redirect to '/liveclass/:id' page
+  const handleClickJoinLiveClass = () => {
+    window.location.href = 'http://127.0.0.1:8080/';
   };
 
   return (
@@ -67,6 +71,13 @@ const CourseMake = () => {
               Enter Course
             </button>
           )}
+          <button
+  className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md mt-4"
+  onClick={handleChat}
+  style={{ marginLeft: '2%' }}
+>
+  Let's Chat
+</button>
         </div>
 
         {/* Course Materials */}
@@ -133,7 +144,6 @@ const CourseMake = () => {
                 </div>
                 <button
                   className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md"
-                  onClick={() => handleJoinLiveClass('xyz')}
                 >
                   Create Room
                 </button>
@@ -142,10 +152,7 @@ const CourseMake = () => {
               {instructor && (
                 <button
                   className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md"
-                  onClick={() => {
-                    // Check if any live class is still ongoing by checking if any live class does not have endTime. If no live class is ongoing, then add a new class to the live class document and give it a class id, then redirect to '/live/classid'.
-                    // Add the above routings in App.jsx.
-                  }}
+                  onClick={handleClickJoinLiveClass}
                 >
                   Start Live
                 </button>
