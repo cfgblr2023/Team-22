@@ -11,6 +11,10 @@ import Enrolled from './screens/Enrolled';
 import ShopContextProvider from './context';
 import CourseInside from './screens/CourseInside';
 import CourseMake from './screens/CourseMake';
+import Admin from './screens/Admin';
+import Events from './screens/Events';
+import CourseDemands from './screens/CourseDemands';
+import Accdep from './screens/Accdep';
 
 function App() {
   return (
@@ -29,6 +33,10 @@ function App() {
             <Route path='/student/mycourses/courseone' element={<CourseInside></CourseInside>}></Route>
             <Route path='/student/enrolled' element={<Enrolled></Enrolled>}></Route>
             <Route path='/volunteer/home/courseone' element={<CourseMake></CourseMake>}></Route>
+            <Route path='/admin' element={<Admin></Admin>}></Route>
+            <Route path='/admin/events' element={<Events></Events>}></Route>
+            <Route path='/admin/accdep' element={<Accdep></Accdep>}></Route>
+            <Route path='/admin/coursedemands' element={<CourseDemands></CourseDemands>}></Route>
           </Routes>
     </BrowserRouter>
     </ShopContextProvider>

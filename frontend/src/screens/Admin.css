@@ -1,0 +1,24 @@
+.main-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .text {
+    text-align: center;
+    font-size: 41px;
+    font-weight: bold;
+    color: #fffc;
+    font-family: monospace;
+    width: 50%;
+    height: 30%;
+    padding: 2%;
+    justify-content: center;
+    margin-left: 7%;
+    background: linear-gradient(45deg, #291224, #da671b);
+    box-shadow: 0 2px 4px rgb(22 22 22 / 10%);
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 50px;
+}

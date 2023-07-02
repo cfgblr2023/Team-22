@@ -51,13 +51,13 @@ const Login = () => {
 
   return (
     <div className="flex gap-10 justify-center items-center h-screen bg-gradient-to-br from-teal-400 to-purple-500">
-    <div className='text-400' >Lamp Education and charitable trust is a non-profit organization started in 2010 by Jaganathan Rajagopal in Bangalore.
-The organization helps educate dropped out students to complete their education by a them with their studies
-through coaching and tuitions with the help of volunteers who are willing to participate in teaching. It has helped more
-than 200 students in completing their studies tll graduation. It has conducted more than 40 volunteering events so far.
+    <div className="text-400" style={{ color: "rgba(0, 0, 0, 0.7)" }}>
+  Lamp Education and charitable trust is a non-profit organization started in 2010 by Jaganathan Rajagopal in Bangalore. The organization helps educate dropped out students to complete their education by providing them with coaching and tuitions through the help of volunteers who are willing to participate in teaching. It has helped more than 200 students in completing their studies till graduation. It has conducted more than 40 volunteering events so far.
 
-Lamp also provides trainings and opportunities to underprivileged women to help them find employment and set up
-their home business.</div>
+  Lamp also provides training and opportunities to underprivileged women to help them find employment and set up their home business.
+</div>
+
+
       <div className="w-3/4 md:w-1/2 lg:w-1/3 bg-white rounded-lg shadow-lg p-8">
         <h2 className="text-4xl font-bold mb-6 text-center text-teal-800">Welcome back!</h2>
         <form>
