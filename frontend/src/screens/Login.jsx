@@ -35,9 +35,10 @@ const Login = () => {
       //save the auth toke to local storage and redirect
       localStorage.setItem('userEmail', email)
       localStorage.setItem('token', json.authToken)
+      localStorage.setItem('name', json.name)
       if(json.userRole=='Student')
       {
-
+          navigate("/student/mycourses")
       }
       else{
         navigate('/volunteer/home')

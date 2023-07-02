@@ -3,21 +3,36 @@ import './Coursecard.css';
 import { Shoppingcontext } from '../context';
 import { useNavigate } from 'react-router-dom';
 
-const CourseCard = ({ courseName, professor, available, progress ,hidebutton}) => {
-    const nav= useNavigate();
+const CourseCard = ({ courseName, professor, available, progress ,hidebutton, teacheremail,language,area, skill}) => {
+  const prof=professor
+  const nav= useNavigate();
   const { cartitems, setCartItems } = useContext(Shoppingcontext);
   const [enrolled, setEnrolled] = useState(false);
 
-  const handleEnrollClick = () => {
-    console.log(enrolled);
-    if (!enrolled) {
-      const updatedCartItems = cartitems.map((item) =>
-        item.courseName === courseName ? { ...item, enrolled: true } : item
-      );
-      setCartItems(updatedCartItems);
-      setEnrolled(true);
+  const handleEnrollClick = async() => {
+    const response = await fetch("http://localhost:5000/api/endata/endata", {
+      // credentials: 'include',
+      // Origin:"http://localhost:3000/login",
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email:teacheremail, teacher:prof, useremail:localStorage.getItem("userEmail"), course: courseName , language:language, area:area, skill:skill})
+    });
+    
+    const json = await response.json()
+    console.log(json);
+
+    if (json.success) {
+      // alert("Succesfull");
+    nav("/student/enrolled")  
+     
+    }
+    else {
+      alert("Enter Valid Credentials")
     }
   };
+
   const gotopage = ()=>{
     nav("/student/mycourses/courseone");
   }

@@ -56,8 +56,8 @@ const CourseMake = () => {
       <div className="container mx-auto px-4 py-8 absolute" style={{ top: `42%`, flexDirection: `column` }}>
         {/* Course Details */}
         <div className="mb-6">
-          <h2 className="text-3xl font-bold text-white">Web Development</h2>
-          <p className="text-lg font-semibold text-white">Instructor: Akhilesh</p>
+          <h2 className="text-3xl font-bold text-white">{localStorage.getItem("course")}</h2>
+          <p className="text-lg font-semibold text-white">Instructor: {localStorage.getItem("teacher")}</p>
           <p className="text-white">Start Date: June 2, 2023</p>
           {!showDetails && (
             <button

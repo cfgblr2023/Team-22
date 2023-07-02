@@ -34,8 +34,9 @@ router.post('/login', [
         }
         success = true;
         const userRole=user.role
+        const name=user.name
         const authToken = jwt.sign(data, jwtSecret);
-        res.json({ success, authToken, userRole })
+        res.json({ success, authToken, userRole, name })
 
 
     } catch (error) {

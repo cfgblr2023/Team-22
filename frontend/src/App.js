@@ -28,7 +28,6 @@ function App() {
             <Route path='/student/mycourses' element={<CourseListingPage></CourseListingPage>}></Route>
             <Route path='/student/mycourses/courseone' element={<CourseInside></CourseInside>}></Route>
             <Route path='/student/enrolled' element={<Enrolled></Enrolled>}></Route>
-            <Route path='/student/enrolled' element={<Enrolled></Enrolled>}></Route>
             <Route path='/volunteer/home/courseone' element={<CourseMake></CourseMake>}></Route>
           </Routes>
     </BrowserRouter>

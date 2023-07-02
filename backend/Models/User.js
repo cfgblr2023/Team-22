@@ -33,8 +33,12 @@ const UserSchema= new Schema({
     education:{
         type:String,
         default:""
+    },
+    enrolledcourses:{
+        type: Map,
+        of: String,
+        default:{}
     }
-    
 
     
 })

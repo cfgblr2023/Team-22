@@ -31,7 +31,7 @@ const AddCourse = () => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ email:localStorage.getItem("userEmail"),course: courseName, skill: skillLevel, live:schedule,offline:offline, language:language,area:areaOfInterest })
+    body: JSON.stringify({ email:localStorage.getItem("userEmail"),course: courseName, skill: skillLevel, live:schedule,offline:offline, language:language,area:areaOfInterest, name:localStorage.getItem("name") })
   });
 
   const json = await response.json()

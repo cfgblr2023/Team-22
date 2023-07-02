@@ -21,6 +21,8 @@ connectToDatabase();
   
   app.use('/api/register', require('./Routes/signup'));
   app.use('/api/addcourse', require('./Routes/AddCourse'));
+  app.use('/api/endata', require('./Routes/enrolled'));
+  app.use('/api/encourse', require('./Routes/enrolled'));
   app.use('/api/update', require('./Routes/signup'));
   app.use('/api/login', require('./Routes/login'));
   app.use('/api/course', require('./Routes/course'));

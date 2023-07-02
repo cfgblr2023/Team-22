@@ -1,46 +1,41 @@
 import React from 'react';
 import CourseCard from './CourseCard';
 import Navbar2 from './Navbar2';
-
-const courseData = [
-  {
-    name: "Digital Marketing",
-    professor: "Mukesh",
-    available: "Weekends",
-    progress: 70,
-    enrolled: true,
-  },
-  {
-    name: "Web Development",
-    professor: "John",
-    available: "Weekdays",
-    progress: 50,
-    enrolled: true,
-  },
-  {
-    name: "Data Science",
-    professor: "Emily",
-    available: "Weekdays",
-    progress: 90,
-    enrolled: false,
-  },
-  // Add more course objects as needed
-];
+import  { useContext, useState, useEffect } from 'react';
+import CourseCard2 from './CourseCard2';
 
 function CourseListingPage() {
-  const enrolledCourses = courseData.filter((course) => course.enrolled);
+
+  const [courses, setCourses] = useState([])
+  
+  useEffect(() => {
+    const loadCourses = async () => {
+      let response = await fetch("http://localhost:5000/api/encourse/encourse", {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      response = await response.json()
+      // console.log(response[1][0].CategoryName)
+      setCourses(response[0])
+    }
+    loadCourses()
+  }, [])
 
   return (
     <>
       <Navbar2 />
       <div className="course-list">
-        {enrolledCourses.map((course, index) => (
-          <CourseCard
+        {courses.map((course, index) => (
+          <CourseCard2
             key={index}
-            courseName={course.name}
-            professor={course.professor}
+            courseName={course.course}
+            professor={course.teacher}
             available={course.available}
-            progress={course.progress}
+            progress={course.skill*10}
             hideButton={true}
           />
         ))}

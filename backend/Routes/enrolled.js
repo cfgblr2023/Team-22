@@ -1,20 +1,35 @@
 const express = require('express')
-const addcourse = require('../Models/AddCourse')
+const addcourse = require('../Models/EnrolledCourses')
 const router = express.Router()
-const { body, validationResult } = require('express-validator');
+const User= require("../Models/User")
 
-router.post('/addcourse', async (req, res) => {
+router.post('/encourse', async (req, res) => {
+    try {
+        let course = await addcourse.find({});  //{email:email} === {email}
+        global.enrolled=course;
+        success = true; 
+        res.send([global.enrolled])
+
+
+    } catch (error) {
+        console.error(error.message)
+        res.send("Server Error")
+    }
+})
+
+router.post('/endata', async (req, res) => {
     let success = false
     try {
         await addcourse.create({
-            name: req.body.name,
             area: req.body.area,
+            skill:req.body.skill,
             email:req.body.email,
             course: req.body.course,
             live:req.body.live,
-            skill:req.body.skill,
+            useremail:req.body.useremail,
             language: req.body.language,
-            offline:req.body.offline
+            offline:req.body.offline,
+            teacher:req.body.teacher
         }).then(user => {
             const data = {
                 user: {
@@ -35,3 +50,6 @@ router.post('/addcourse', async (req, res) => {
 
 
 module.exports= router
+
+
+module.exports = router
