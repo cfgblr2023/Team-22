@@ -60,11 +60,11 @@ const AddCourse = () => {
       >
         
         <option value="">Select</option>
-        <option value="Programming">Programming</option>
-        <option value="Political Science">Political Science</option>
-        <option value="History">History</option>
+        <option value="Women Empowerment Program">Women Empowerment Program</option>
+        <option value="Carrer Counseling">Carrer Counseling</option>
+        <option value="Personality Development">Personality Development</option>
         <option value="Small Business Development">Small Business Development</option>
-        <option value="Current Affairs">Current Affairs</option>
+        <option value="Public Speaking">Public Speaking</option>
         {/* Add more options based on available courses */}
       </select>
 

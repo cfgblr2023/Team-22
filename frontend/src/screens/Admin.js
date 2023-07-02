@@ -8,7 +8,7 @@ const Admin= () => {
     <Navbar3></Navbar3>
     <div className='main-body'>
         <div className='text'>
-            Welcome to the Admin Dashboard !
+            Welcome to the Admin Dashboard
         </div>
     </div>
     </>
